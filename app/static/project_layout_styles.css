@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #343a40;
+    --primary-hover-color:#495057;
+}
+
+/* Default styles (for large screens and desktops) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.home-icon{
+    padding: 0 10px;
+    font-size: 23px;
+}
+.home-icon:hover{
+    font-size: 25px;
+}
+
+.header{
+    background-color: var(--primary-color);
+}
+#menu-toggle-button{
+    background-color: transparent;
+    border: none;
+    padding: 10px 5px;
+    margin-left: 9px;
+    font-weight: 600;
+}
+#menu-toggle-button:hover{
+    background-color: white;
+}
+#menu-toggle-button:hover i{
+    color: var(--primary-color) !important;
+}
+.offcanvas-title.custom-offcanvas-title{
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: white;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: 600;
+}
+.offcanvas.custom-offcanvas{
+    background-color: var(--primary-color);
+    border-right-color: white;
+}
+.accordion-button.custome-accordian-button{
+    color: white;
+    background-color: transparent;
+}
+.accordion-button.custome-accordian-button:hover{
+    color: white;
+    background-color: var(--primary-hover-color);
+}
+.accordion-item.custom-accordion-item{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.offcanvas-close-btn{
+    color: white;
+}
+.accordion-button:focus{
+    border-color: none;
+    box-shadow: 0 0 0 0 var(--primary-hover-color);
+}
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%20fill='%23212529'%3E%3Cpath%20fill-rule='evenodd'%20d='M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z'%2F%3E%3C%2Fsvg%3E") !important;
+}
+.active-menu{
+    color: white !important;
+    background-color: var(--primary-hover-color) !important;
+}
+.menu-icon{
+    color: #ffffff;
+    font-size: 19px;
+    margin-right: 8px;
+}
+.menu-items{
+    text-decoration: none;  
+    padding: 8px 2px;
+}
+.menu-items a{
+    text-decoration: none;
+    color: rgb(185, 181, 181);
+}
+.menu-items a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.accordion-body.custom-accordion-body{
+    padding-top: 0;
+}
+/* Extra small screens (mobile phones, 480px or less) */
+@media (max-width: 480px) {
+    
+}
+
+/* Small screens (phones, 481px–767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    
+}
+
+/* Medium screens (tablets, 768px–1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* Large tablets or small desktops (1025px–1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    
+}
+
+/* Large desktops (1281px–1600px) */
+@media (min-width: 1281px) and (max-width: 1600px) {
+    
+}
+
+/* Extra large screens (1601px and up) */
+@media (min-width: 1601px) {
+    
+}
