@@ -1,0 +1,62 @@
+{% extends 'project_layout.html' %}
+{% block title %}Text Summarizers Page{% endblock %}
+
+
+{% block styles %}
+<style>
+.summariser-output{
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<form action="/text_summarizer/summariser" method="POST" id="text-summariser-form">
+    <div class="mb-3">
+        <label for="inputText" class="form-label">Please enter your text here:</label>
+        <textarea class="form-control" id="inputText" name="inputText" rows="10">
+            {{page_model.input_text}}
+        </textarea>
+    </div>
+  
+    <button type="submit" class="btn btn-secondary" id="submitBtn">Summarize text</button>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper" class="d-none">
+        <div class="spinner-grow text-secondary" role="status" id="loader" style="display: none;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <span>Summarizing ...</span>
+    </div>
+    
+
+    <div class="text-wrapper pt-3">          
+        {% if page_model.input_text %}
+        <p class="summariser-output">
+            {{page_model.output_text}}
+        </p>
+        {% endif %}
+        {% if page_model.error_message %}
+            <div class="alert alert-danger" role="alert">
+                {{page_model.error_message}}
+            </div>
+        {% endif %}
+    </div>    
+  </form>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#text-summariser-form').submit(function(event) {
+            event.preventDefault();
+            $("#loader-wrapper").removeClass('d-none');
+            $('#loader').show();
+            $('#submitBtn').hide();
+            $('#text-summariser-form')[0].submit();
+        });
+    });
+</script>
+{% endblock %}

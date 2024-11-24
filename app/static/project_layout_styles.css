@@ -72,6 +72,9 @@ body {
     color: white !important;
     background-color: var(--primary-hover-color) !important;
 }
+.active-menu-item{
+    color: white !important;
+}
 .menu-icon{
     color: #ffffff;
     font-size: 19px;
@@ -92,9 +95,24 @@ body {
 .accordion-body.custom-accordion-body{
     padding-top: 0;
 }
+.page-name{
+    color: white;
+    padding: 7px 29px;
+    margin: auto 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.page-path-name{
+    padding-left: 20px;
+}
+li.no-bullets {
+    list-style: none;
+}
 /* Extra small screens (mobile phones, 480px or less) */
 @media (max-width: 480px) {
-    
+    .page-path-name{
+        display: none;
+    }
 }
 
 /* Small screens (phones, 481px–767px) */
