@@ -33,12 +33,13 @@
 
     <div class="text-wrapper pt-3">          
         {% if page_model.input_text %}
-        <p class="summariser-output">
+        <p class="summariser-output pr-2">
             {{page_model.output_text}}
         </p>
         {% endif %}
         {% if page_model.error_message %}
             <div class="alert alert-danger" role="alert">
+                <i class="fa-solid fa-triangle-exclamation"></i>
                 {{page_model.error_message}}
             </div>
         {% endif %}

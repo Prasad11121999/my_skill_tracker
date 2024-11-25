@@ -1,15 +1,79 @@
 {% extends 'project_layout.html' %}
-{% block title %}Text Summarizers Page{% endblock %}
+{% block title %}Text Summarizer Documentation{% endblock %}
 
 
 {% block styles %}
 <style>
-
 </style>
 {% endblock %}
 
 {% block content %}
-<p>My summarizer</p>
+        <div class="">
+            <h1 class="text-center text-secondary mb-4">Text Summarize Project Documentation</h1>
+            <p>
+                This document provides an overview of the <strong>Text Summarize</strong> project, which is a Flask-based
+                application that uses Facebook's <code>BART-Large-CNN</code> transformer model for text summarization.
+            </p>
+
+            <h2 class="text-secondary mt-4">Project Overview</h2>
+            <p>
+                The <strong>Text Summarize</strong> project allows users to input text and generates a concise summary of the provided content.
+                It utilizes advanced transformer-based machine learning techniques for high-quality summarization.
+            </p>
+
+            <h2 class="text-secondary mt-4">Workflow</h2>
+            <ol>
+                <li>The user enters text into a textarea on the web page.</li>
+                <li>The input text is processed using the <code>BART-Large-CNN</code> transformer model.</li>
+                <li>The model outputs a summarized version of the input text.</li>
+                <li>The summary is displayed on the same page for the user.</li>
+            </ol>
+
+            <h2 class="text-secondary mt-4">Features</h2>
+            <ul>
+                <li>Text summarization powered by Facebook's <code>BART-Large-CNN</code> transformer model.</li>
+                <li>Simple, intuitive user interface for entering text and viewing summaries.</li>
+                <li>Processes text directly and outputs concise summaries.</li>
+                <li>Works seamlessly with a Flask backend and Python transformers.</li>
+            </ul>
+
+            <h2 class="text-secondary mt-4">Technology Stack</h2>
+            <ul>
+                <li><strong>Frontend:</strong> HTML and Bootstrap for layout and styling</li>
+                <li><strong>Backend:</strong> Flask (Python)</li>
+                <li><strong>Model:</strong> Facebook's <code>BART-Large-CNN</code> transformer</li>
+                <li><strong>Tools:</strong> Hugging Face Transformers library</li>
+            </ul>
+
+            <h2 class="text-secondary mt-4">System Flow Diagram</h2>
+            <p>The following diagram illustrates the high-level flow of the system:</p>
+            <ol>
+                <li><strong>Input:</strong> User provides text through the web interface.</li>
+                <li><strong>Processing:</strong> The input is passed to the Flask backend, which uses the <code>BART-Large-CNN</code> model for summarization.</li>
+                <li><strong>Output:</strong> The summarized text is displayed back on the web page.</li>
+            </ol>
+
+            <h2 class="text-secondary mt-4">Usage</h2>
+            <p>To use the application:</p>
+            <ul>
+                <li>Navigate to the application interface.</li>
+                <li>Enter the text you want to summarize in the provided textarea.</li>
+                <li>Click the "Summarize" button (or equivalent action).</li>
+                <li>View the summary directly on the same page.</li>
+            </ul>
+
+            <h2 class="text-secondary mt-4">Future Enhancements</h2>
+            <ul>
+                <li>Provide multi-language summarization support.</li>
+                <li>Allow batch processing of multiple texts at once.</li>
+                <li>Integrate additional transformer models for comparison.</li>
+            </ul>
+
+            <footer class="text-center mt-5">
+                <p>&copy; 2024 Text Summarize Project | Built by <strong>Prasad Sawant</strong></p>
+            </footer>
+        </div>
+
 {% endblock %}
 
 {% block scripts %}

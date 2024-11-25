@@ -1,14 +1,142 @@
 {% extends 'project_layout.html' %}
-{% block title %}Chat Bots Page{% endblock %}
+{% block title %}Chat Bots Documentation{% endblock %}
 
 {% block styles %}
 <style>
-
+i{
+    margin-right: 10px;
+}
 </style>
 {% endblock %}
 
 {% block content %}
-<p>My summarizer</p>
+
+<h1 class="text-center mb-4">Chatbot Documentation</h1>
+        
+<!-- Accordion for documentation sections -->
+<div class="accordion" id="chatbotDocumentation">
+    <!-- Introduction Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingIntroduction">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseIntroduction" aria-expanded="true" aria-controls="collapseIntroduction">
+                <i class="fas fa-info-circle"></i> Introduction
+            </button>
+        </h2>
+        <div id="collapseIntroduction" class="accordion-collapse collapse show" aria-labelledby="headingIntroduction" data-bs-parent="#chatbotDocumentation">
+            <div class="accordion-body">
+                <p>
+                    Welcome to the Chatbot Documentation. This chatbot is an innovative tool designed to enhance user interaction, simplify communication, and provide instant responses to queries. It leverages cutting-edge technologies like Artificial Intelligence (AI) and Natural Language Processing (NLP) to understand and respond to user inputs efficiently. 
+                </p>
+                <h5>What is a Chatbot?</h5>
+                <p>
+                    A chatbot is a software application that simulates human conversation through text or voice interactions. It is widely used across industries, from customer service and healthcare to e-commerce and education, to streamline operations and improve user experience.
+                </p>
+                <h5>Purpose of the Chatbot</h5>
+                <p>
+                    The primary goal of this chatbot is to automate repetitive tasks, provide quick answers, and reduce the workload on human operators. Whether it's answering FAQs, assisting with navigation, or offering personalized recommendations, the chatbot ensures seamless communication and enhances user satisfaction.
+                </p>
+                <h5>Benefits of Using the Chatbot</h5>
+                <ul>
+                    <li><strong>24/7 Availability:</strong> Always ready to assist users, regardless of time or location.</li>
+                    <li><strong>Efficiency:</strong> Processes multiple requests simultaneously, reducing response time.</li>
+                    <li><strong>Cost-Effective:</strong> Minimizes the need for a large support team, saving resources.</li>
+                    <li><strong>Scalability:</strong> Easily adapts to handle increasing user demands without degradation in performance.</li>
+                    <li><strong>Personalization:</strong> Delivers tailored responses and recommendations based on user data and behavior.</li>
+                </ul>
+                <p>
+                    This documentation is intended to guide you through setting up, customizing, and utilizing the chatbot effectively. Whether you are a developer, administrator, or end-user, the following sections will provide detailed information and instructions to make the most out of this powerful tool.
+                </p>
+            </div>
+        </div>        
+    </div>
+
+    <!-- Setup Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSetup">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseSetup" aria-expanded="false" aria-controls="collapseSetup">
+                <i class="fas fa-cogs"></i> Setup
+            </button>
+        </h2>
+        <div id="collapseSetup" class="accordion-collapse collapse" aria-labelledby="headingSetup"
+            data-bs-parent="#chatbotDocumentation">
+            <div class="accordion-body">
+                <h5>Steps to Set Up</h5>
+                <ol>
+                    <li>Clone the chatbot repository from GitHub.</li>
+                    <li>Install the required dependencies using <code>npm install</code>.</li>
+                    <li>Start the chatbot server using <code>npm start</code>.</li>
+                    <li>Integrate the chatbot with your web application by embedding the provided widget code.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFeatures">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFeatures" aria-expanded="false" aria-controls="collapseFeatures">
+                <i class="fas fa-list"></i> Features
+            </button>
+        </h2>
+        <div id="collapseFeatures" class="accordion-collapse collapse" aria-labelledby="headingFeatures"
+            data-bs-parent="#chatbotDocumentation">
+            <div class="accordion-body">
+                <ul>
+                    <li>Natural Language Processing for understanding queries.</li>
+                    <li>Customizable responses and workflows.</li>
+                    <li>Integration with multiple platforms like websites, WhatsApp, and Facebook Messenger.</li>
+                    <li>Analytics and insights on user interactions.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Usage Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingUsage">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseUsage" aria-expanded="false" aria-controls="collapseUsage">
+                <i class="fas fa-play"></i> Usage
+            </button>
+        </h2>
+        <div id="collapseUsage" class="accordion-collapse collapse" aria-labelledby="headingUsage"
+            data-bs-parent="#chatbotDocumentation">
+            <div class="accordion-body">
+                <p>To use the chatbot, follow these steps:</p>
+                <ol>
+                    <li>Open the application or website where the chatbot is integrated.</li>
+                    <li>Click on the chatbot icon at the bottom-right corner.</li>
+                    <li>Type your query in the text box and press Enter.</li>
+                    <li>Receive an instant response or guidance based on your query.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFAQ">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFAQ" aria-expanded="false" aria-controls="collapseFAQ">
+                <i class="fas fa-question-circle"></i> FAQ
+            </button>
+        </h2>
+        <div id="collapseFAQ" class="accordion-collapse collapse" aria-labelledby="headingFAQ"
+            data-bs-parent="#chatbotDocumentation">
+            <div class="accordion-body">
+                <p><strong>Q:</strong> How do I customize the chatbot?</p>
+                <p><strong>A:</strong> Modify the response templates and logic in the configuration file or dashboard.
+                </p>
+                <p><strong>Q:</strong> Can I integrate it with other systems?</p>
+                <p><strong>A:</strong> Yes, APIs are available for seamless integration.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 {% block scripts %}

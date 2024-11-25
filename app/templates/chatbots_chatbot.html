@@ -1,5 +1,5 @@
 {% extends 'project_layout.html' %}
-{% block title %}Chat Bots Page{% endblock %}
+{% block title %}Chat Bot{% endblock %}
 
 {% block styles %}
 <style>
@@ -8,10 +8,68 @@
 {% endblock %}
 
 {% block content %}
-<p>My summarizer</p>
+<h1 class="text-center">Chatbot</h1>
+        <!-- Chat Display -->
+        <div id="chatDisplay" class="border p-3 mb-3" style="height: 500px; overflow-y: auto; background-color: #f8f9fa;">
+        </div>
+        <!-- User Input -->
+        <form id="chatForm" class="d-flex">
+            <input type="text" id="userInput" class="form-control me-2" placeholder="Type your message..." required>
+            <button type="submit" class="btn btn-white p-0"><i class="fa-solid fa-circle-arrow-up" style="font-size: 32px;"></i></button>
+        </form>
+</div>
 {% endblock %}
 
 {% block scripts %}
 <script>
+    $(document).ready(function () {
+            // Handle form submission
+            $('#chatForm').submit(function (e) {
+                e.preventDefault(); // Prevent form refresh
+
+                // Get user input
+                const userMessage = $('#userInput').val().trim();
+                if (!userMessage) return; // Do nothing if input is empty
+
+                // Display user message in the chat
+                $('#chatDisplay').append(`
+                    <div class="text-end mb-2">
+                        <span class="badge bg-primary">${userMessage}</span>
+                    </div>
+                `);
+
+                // Clear the input field
+                $('#userInput').val('');
+
+                // Scroll to the bottom of the chat
+                $('#chatDisplay').scrollTop($('#chatDisplay')[0].scrollHeight);
+
+                // Send message to backend
+                $.ajax({
+                    url: '/api/chatbot', // Replace with your backend endpoint
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ message: userMessage }),
+                    success: function (response) {
+                        // Display the chatbot's response
+                        $('#chatDisplay').append(`
+                            <div class="text-start mb-2">
+                                <span class="badge bg-secondary">${response.reply}</span>
+                            </div>
+                        `);
+                        $('#chatDisplay').scrollTop($('#chatDisplay')[0].scrollHeight);
+                    },
+                    error: function () {
+                        // Display error message
+                        $('#chatDisplay').append(`
+                            <div class="text-start mb-2 text-danger">
+                                <span>Sorry, something went wrong!</span>
+                            </div>
+                        `);
+                        $('#chatDisplay').scrollTop($('#chatDisplay')[0].scrollHeight);
+                    }
+                });
+            });
+        });
 </script>
 {% endblock %}

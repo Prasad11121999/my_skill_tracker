@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, Blueprint
+from flask import render_template, request, redirect, url_for, Blueprint, jsonify
 from app.models.page_setup_model import page_setup_model
 from app.models.text_summarizer_model import text_summarizer_model
 import app.utils.text_summeriser as ts
@@ -16,7 +16,7 @@ def text_summarizer_documentation():
     pages_setup_model.page_path = ["Text Summariser", "Documentation"]
     pages_setup_model.page_html_id = "text-summariser-page-1"
 
-    return render_template('chatbots_documentation.html',pages_setup_model=pages_setup_model)
+    return render_template('text_summarizer_dashboard.html',pages_setup_model=pages_setup_model)
 
 @bp.route('/text_summarizer/summariser', methods=['GET','POST'])
 def text_summarizer_summariser():
@@ -52,3 +52,9 @@ def chatbots_chatbot():
     pages_setup_model.page_html_id = "chatbot-page-2"
     
     return render_template('chatbots_chatbot.html',pages_setup_model=pages_setup_model)
+
+@bp.route('/api/chatbot', methods=['GET','POST'])
+def chatbot():
+    data = request.get_json()
+    message = data.get('message', '')
+    return jsonify({'reply': f'reply to: {message}'})

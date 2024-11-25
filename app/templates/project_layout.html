@@ -39,7 +39,7 @@
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item custom-accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button custome-accordian-button active-menu" type="button" data-bs-toggle="collapse"
+                            <button class="accordion-button custome-accordian-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
                                 <i class="fa-solid fa-rectangle-list menu-icon"></i>
                                 <span>Text Summariser</span>
@@ -116,8 +116,10 @@
           </div>
     </div>
     <div class="container p-2">
-        {% block content %}
-        {% endblock %}
+        <div class="bg-white shadow p-4">
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>    
 
 
@@ -139,10 +141,15 @@
 
             function pageSetup(){
                 const pageId = $("#page_html_id").val();
-                const munuLink = $('#'+pageId);
-                munuLink.addClass("active-menu-item");
-                munuLink.closest('.menu-items').closest('div.accordion-collapse').addClass('show');
-                munuLink.closest('li').removeClass('no-bullets');
+                const menuLink = $('#'+pageId);
+                menuLink.addClass("active-menu-item");
+                menuLink.closest('.menu-items').closest('div.accordion-collapse').addClass('show');
+                menuLink.closest('.accordion-collapse')
+                    .prev('.accordion-header')
+                    .find('.accordion-button')
+                    .addClass('active-menu');
+                menuLink.closest('li').removeClass('no-bullets');
+                //accordion-button custome-accordian-button active-menu
             }            
         });
     </script>
