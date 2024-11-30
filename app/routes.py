@@ -40,7 +40,7 @@ def text_summarizer_documentation():
 @bp.route('/chatbots')
 def chatbots_documentation():
     pages_setup_model = page_setup_model()
-    pages_setup_model.page_path = ["Chatbots", "Documentation"]
+    pages_setup_model.page_path = [ "Documentation","Chatbots"]
     pages_setup_model.page_html_id = "chatbot-page-1"
 
     return render_template('chatbots_documentation.html',pages_setup_model=pages_setup_model)
@@ -48,10 +48,18 @@ def chatbots_documentation():
 @bp.route('/chatbots/chatbot')
 def chatbots_chatbot():
     pages_setup_model = page_setup_model()
-    pages_setup_model.page_path = ["Chatbots", "Chatbot"]
+    pages_setup_model.page_path = ["Chatbot", "Chatbots"]
     pages_setup_model.page_html_id = "chatbot-page-2"
     
     return render_template('chatbots_chatbot.html',pages_setup_model=pages_setup_model)
+
+@bp.route('/ecommerce_dashboard')
+def ecommerce_dashboard():
+    pages_setup_model = page_setup_model()
+    pages_setup_model.page_path = [ "E Commerce Dashboard","My Power BI Dashboards"]
+    pages_setup_model.page_html_id = "pbi-page-1"
+
+    return render_template('ecommerce_dashboard.html',pages_setup_model=pages_setup_model)
 
 @bp.route('/api/chatbot', methods=['GET','POST'])
 def chatbot():

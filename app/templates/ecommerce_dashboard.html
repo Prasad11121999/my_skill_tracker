@@ -1,0 +1,56 @@
+
+{% extends 'project_layout.html' %}
+{% block title %}Text Summarizer Documentation{% endblock %}
+
+
+{% block styles %}
+<style>
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .dashboard-description {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .dashboard-description p {
+            margin-bottom: 15px;
+        }
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">
+        E-Commerce Power BI DashBoard
+    </h1>
+    <div class="">
+        <iframe title="EcommerceDashboard" width="1140" height="541.25"
+            src="https://app.powerbi.com/reportEmbed?reportId=59f678fb-cb79-4cc4-8fa3-5f08e1aeb1bc&autoAuth=true&ctid=fe6a2362-9b42-4ec8-8684-3fb1a542df8c"
+            frameborder="0" allowFullScreen="true"></iframe>
+    
+    </div>
+    <div class="dashboard-description">
+        <p>This is a Power BI dashboard designed to provide a comprehensive analysis of an e-commerce platform's sales and customer data. It includes various data visualizations such as:</p>
+        
+        <ul>
+            <li><strong>Sales by Division and District:</strong> The table provides a breakdown of total sales by geographic region, displaying values by division and district.</li>
+            <li><strong>Best 5 Customers:</strong> A bar chart representing the top 5 customers by total spending.</li>
+            <li><strong>Sales Trends:</strong> The yearly sales trend over the years, showing how sales have evolved from 2014 to 2020.</li>
+            <li><strong>Sales by Item Name:</strong> A pie chart showing the distribution of sales based on different item names.</li>
+            <li><strong>Sales by Transaction Type:</strong> A pie chart breaking down sales by different transaction types, showing the percentage share of each.</li>
+            <li><strong>Sales by Item Key:</strong> A bar chart displaying the sum of total sales by individual item keys.</li>
+            <li><strong>Sales by Month:</strong> A graph showing monthly sales distribution across the years, providing insights into seasonality.</li>
+            <li><strong>Sales by Region:</strong> A pie chart showing the total sales by division with color-coded segments for each region.</li>
+        </ul>
+
+        <p>The dashboard provides valuable insights into sales performance, customer trends, and helps in understanding the geographical distribution of sales. It is an essential tool for decision-making in the e-commerce sector.</p>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+</script>
+{% endblock %}

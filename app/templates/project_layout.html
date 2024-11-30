@@ -6,21 +6,28 @@
     <title>{% block title %}{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='project_layout_styles.css') }}">
+    <style>
+        iframe{
+            width: 100%;
+            height: 627px;
+        }
+    </style>
     {% block styles %}{% endblock %}
 </head>
 <body>
     <header class="header p-2 d-flex justify-content-between align-items-center">
-        <div>
+        <div class="d-flex">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" id="menu-toggle-button"><i class="fa-solid fa-angles-down fa-rotate-90 menu-toggle-button-icon" style="color: #ffffff;"></i></button>
-            <span class="page-path-name">
+            <div class="bcca-breadcrumb">
                 <input type="hidden" id="page_html_id" value='{{pages_setup_model.page_html_id}}'>
                 {% for dir in pages_setup_model.page_path %}
                     {% if loop.index !=1 %}
-                        <i class="fa-solid fa-forward" style="color: #ffffff;"></i>
+                        <div class="bcca-breadcrumb-item">{{dir}}</div>
+                    {% else %}
+                        <div class="bcca-breadcrumb-item">{{dir}}</div>
                     {% endif %}
-                    <span class="page-name"> {{dir}} </span>
                 {% endfor %}
-            </span>
+            </div>
         </div>
         <div>
             <span class="d-none">Contact Me</span>
@@ -99,7 +106,7 @@
                                 <div>
                                     <ul>
                                         <li class="menu-items no-bullets">
-                                            <a href="#">Sales performance Bashboard</a>
+                                            <a href="/ecommerce_dashboard" id="pbi-page-1">Sales performance Bashboard</a>
                                         </li>
                                     </ul>
                                 </div>
