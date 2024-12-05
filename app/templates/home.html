@@ -3,15 +3,221 @@
 
 {% block styles %}
 <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+  }
+  .btn-custom-primary{
+    background: linear-gradient(to right, #086448, #108152);
+    color: white;
+  }
+  .btn-custom-primary:hover{
+    border: 1px solid linear-gradient(to right, #086448, #086448) !important;
+    background-color: white !important;
+  }
+  header {
+    background: linear-gradient(to right, #6da9e9, #108152);
+    color: white;
+  }
 
+  .navbar-brand {
+    font-weight: bold;
+  }
+    .custom-nav-bar{
+        background: linear-gradient(to right, #6da9e9, #108152);
+    }
+  .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffc107 !important;
+  }
+
+  #about img {
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    color: #007bff;
+  }
+
+  .list-group-item {
+    background-color: #ffffff;
+    border: none;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  #contactForm {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  footer {
+    background-color: #343a40;
+  }
+
+  .list-group-item:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+  }
+
+  .contact-form label {
+    font-weight: bold;
+  }
+  .project-thumbnail{
+    border-radius: 10px;
+    width: 80%;
+  }
 </style>
 {% endblock %}
 
 {% block content %}
-<a class="btn btn-primary" href="/chatbots/chatbot">Click Here To see my projects</a>
+<header class="text-center py-5">
+  <div class="banner">
+    <h1>Welcome to My Portfolio</h1>
+    <p class="lead">Hi, I'm Prasad Sawant, a Software Developer specializing in Full-Stack Development and AI/ML solutions.</p>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-nav-bar">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        Prasad Sawant
+        <p style="font-size: 10px;font-weight: normal;margin: 0;color: rgb(245, 245, 245);font-family: 'Courier New', Courier, monospace;">My Skill Tracker</p>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="/chatbots/chatbot">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+  <section id="about" class="mb-5 text-center">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <img src="../static/profilepic.jpg" alt="Profile Image" class="img-fluid " style="max-width: 400px;">
+      </div>
+      <div class="col-md-8">
+        <h2>About Me</h2>
+        <p>I have a Master's degree in Mathematics and over 7 years of experience as a Data Analyst. I'm currently working as a Software Developer at VSKY Solutions, focusing on AI/ML integration in web applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="mb-5">
+    <h2>Skills</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item"><i class="fas fa-code"></i> Full-Stack Development: ASP.NET, React, FastAPI</li>
+          <li class="list-group-item"><i class="fas fa-database"></i> Data Analysis: SQL, Python, Power BI</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group">
+          <li class="list-group-item"><i class="fas fa-robot"></i> AI/ML: Chatbot Development, Recommendation Systems</li>
+          <li class="list-group-item"><i class="fas fa-server"></i> Database Management: MSSQL, PostgreSQL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="mb-5">
+    <h2>Projects</h2>
+    <ul class="list-group">
+        <li class="list-group-item p-3">
+            <span style="font-size: 21px;"><strong>E-commerce Reporting:</strong> Power BI reports for business insights.</span>
+            <div class="row mt-2">
+                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                    <img src="../static/ecommercereport.png" alt="report image" class="project-thumbnail">
+                </div>
+                <div class="col-md-7" style="color: rgb(78, 72, 72);">
+                    <p>This is a Power BI dashboard designed to provide a comprehensive analysis of an e-commerce platform's sales and customer data. It includes various data visualizations such as:</p>
+                    <ul>
+                        <li><strong>Sales by Division and District:</strong> The table provides a breakdown of total sales by geographic region, displaying values by division and district.</li>
+                        <li><strong>Best 5 Customers:</strong> A bar chart representing the top 5 customers by total spending.</li>
+                        <li><strong>Sales Trends:</strong> The yearly sales trend over the years, showing how sales have evolved from 2014 to 2020.</li>
+                        <li><strong>Sales by Item Name:</strong> A pie chart showing the distribution of sales based on different item names.</li>
+                        <li><strong>Sales by Transaction Type:</strong> A pie chart breaking down sales by different transaction types, showing the percentage share of each.</li>
+                        <li><strong>Sales by Item Key:</strong> A bar chart displaying the sum of total sales by individual item keys.</li>
+                        <li><strong>Sales by Month:</strong> A graph showing monthly sales distribution across the years, providing insights into seasonality.</li>
+                        <li><strong>Sales by Region:</strong> A pie chart showing the total sales by division with color-coded segments for each region.</li>
+                    </ul>
+                    <p>The dashboard provides valuable insights into sales performance, customer trends, and helps in understanding the geographical distribution of sales. It is an essential tool for decision-making in the e-commerce sector.</p>
+                    <div class="d-flex justify-content-end">
+                        <a href="/ecommerce_dashboard" class="btn btn-custom-primary">See More</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+  </section>
+
+  <section id="experience" class="mb-5">
+    <h2>Experience</h2>
+    <p>With over 4 years of experience in SQL stored procedure development and 7 years as a Data Analyst, I have optimized queries, developed custom ETL processes, and created insightful dashboards.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2024 Prasad Sawant. All Rights Reserved.</p>
+</footer>
 {% endblock %}
 
+
 {% block scripts %}
+<script src="https://kit.fontawesome.com/5e5dc84b6c.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+    $(document).ready(function() {
+      $('#contactForm').submit(function(event) {
+        event.preventDefault();
+        alert('Message sent successfully!');
+      });
+    });
 </script>
 {% endblock %}
